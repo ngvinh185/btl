@@ -1,5 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
+template <typename T>
+class Vector{
+private:
+	int size;   // bien luu do dai cua vector
+	int capacity;   // bien luu dung luong cua vector
+	T *array;  // tao con tro chua mang
+	void expand(int newCapacity); // ham tang dung luong vector 
+public:
+	Vector(int initCapacity = 100) {}  // ham tao vector
+	~Vector() {} // ham huy vector
+	Vector & operator=(Vector & rhs); //  ham nap chong toan tu gan 
+	int Size(); // ham tra ve kich thuoc
+	bool empty(); // ham kiem tra vector giong
+	T & operator[](int index);  // ham nap chong toan tu truy cap chi so vector
+	void push_back(T newElement); // ham day phan tu vao cuoi vector
+	void pop_back();  //ham xoa phan tu cuoi vector
+	void insert(int pos, T newElement); // ham them phan tu vao vi tri pos
+	void erase(int pos); //ham xoa phan tu tai vi tri pos
+        void clearn(); // ham xoa tat ca cac phan tu vector	
+};
 int loai;
 struct MatHang {
     int id, sl;
