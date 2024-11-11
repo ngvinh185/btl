@@ -22,7 +22,7 @@ public:
         
         if(loai == 1)
         {
-        	cin>>id;
+            cin>>id;
             cin.ignore();
             getline(cin, ten);
             getline(cin, nsx);
@@ -33,11 +33,11 @@ public:
             mh.nsx = nsx;
             danhSachMatHang.push_back(mh);
 
-		}
+	}
         
         else
-		{
-			cin >> id >> idh >> sl;
+	{
+	    cin >> id >> idh >> sl;
             cin.ignore();
             getline(cin, type);
             if(type == "Mua") getline(cin, ngayMua);
@@ -53,14 +53,14 @@ public:
             danhSachHoaDon.push_back(hd);
 
             for (auto& mh : danhSachMatHang) 
-			{
+	    {
                 if (mh.id == hd.idh) {
                     if (hd.type == "Ban") mh.sl -= hd.sl;
                     else mh.sl += hd.sl;
                     break;
                 }
-        	}
-		}
+            }
+	}
     }
     void hienThiDanhSachMatHang() {
         cout << "**Danh sach mat hang hien co**:\n";
@@ -99,14 +99,14 @@ public:
 };
 
 int main() {
-	freopen("code.inp", "r", stdin);
-	freopen("code.out", "w", stdout);
+    freopen("code.inp", "r", stdin);
+    freopen("code.out", "w", stdout);
     CuaHang a;
     
     while(cin>>loai)
     {
     	a.nhap();
-	}
+    }
     a.xuat();
     a.hienThiDanhSachMatHang();  
     a.thongKeSoLuongTon();
